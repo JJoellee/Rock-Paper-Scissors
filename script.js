@@ -1,3 +1,7 @@
+let playerScore=0;
+let computerScore=0;
+let winner;
+
 function getComputerChoice(){
     let choice;
     const number = Math.floor(Math.random()*3);
@@ -8,34 +12,34 @@ function getComputerChoice(){
 }
 
 function playRound(playerSelection, computerSelection){
+    let result = document.querySelector('#result');
+    let end = document.querySelector('#end');
     playerSelection = playerSelection.toLowerCase();
-    let result;
-    if(playerSelection==computerSelection){result=0; console.log("Tie.");} 
+    if(playerSelection==computerSelection){result.textContent = "You "+ playerScore + " - " + computerScore+" Bot"+ " \nTie.";} 
     else if((playerSelection=="rock" && computerSelection=="paper") 
     || (playerSelection=="paper" && computerSelection=="scissors") 
     || (playerSelection=="scissors" && computerSelection=="rock")){
-        result=-1;
-        console.log("You lose :( "+ computerSelection + " beats " + playerSelection);
+        computerScore++;
+        result.textContent = "You "+ playerScore + " - " + computerScore+" Bot"+ " \nYou lose :( "+ computerSelection + " beats " + playerSelection;
     } 
     else {
-        result=1;
-        console.log("You win!! " +  playerSelection + " beats " + computerSelection);}
-    return result;
+        playerScore++;
+        result.textContent = "You "+ playerScore + " - " + computerScore+" Bot"+ " \nYou win!! " +  playerSelection + " beats " + computerSelection;
+    }
+    if (playerScore==5 || computerScore==5){
+        if(playerScore>computerScore) winner="You";
+        else winner= "Bot";
+        end.textContent= winner + " won!";
+    }
+
 }
 
-function game(){
-    let winner;
-    let playerScore=0, computerScore=0;
-    for (let i = 0; i < 5; i++) {
-       
-        let playerSelection = window.prompt("Round " + i +": Rock, paper, or scissors?");
-        let result = playRound(playerSelection, getComputerChoice());
-        if(result==1) playerScore++;
-        else if(result==-1) computerScore++;
-     }
-     if(playerScore>computerScore) winner="You";
-     else winner= "Bot";
-     console.log(winner + " won!");
+let buttons = document.querySelectorAll('button');
+buttons.forEach(button => {
+    button.addEventListener("click", ()=>{
+        playRound(button.textContent, getComputerChoice());
+    }
+    );
 }
+)
 
-game();
