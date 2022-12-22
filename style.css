@@ -4,30 +4,6 @@
     color: white;
     font-family: papyrus, arial, sans-serif;
 }
-  /*#title,
-  .desc,
-  #cta,
-  #score-container,
-  #score-label,
-  #end-desc,
-  #retry-btn {
-    font-family: lacquer, arial, sans-serif;
-    text-align: center;
-  }
-  #title {
-    font-size: 80px;
-    margin-bottom: 0px;
-  }
-  .desc {
-    font-size: 30px;
-  }
-  #cta {
-    opacity: 0;
-    margin: 20px 0 80px 0;
-    font-size: 40px;
-    transform: translateY(-150px);
-  }*/
-
 
   #again, #start{
     margin-left: auto;
@@ -74,39 +50,6 @@
     transform: scale(1.1);
     box-shadow: 0 0 20px 1px;
   }
-
-  /*
-  #score-label,
-  #score-container {
-    display: flex;
-    justify-content: center;
-  }
-  .label {
-    font-size: 30px;
-    margin-top: 80px;
-    padding: 0 40px;
-  }
-  .score {
-    font-size: 80px;
-    padding: 0px 40px;
-  }
-  #results-container {
-    margin-top: 60px;
-    text-align: center;
-    opacity: 0;
-    transition: all 1s ease;
-  }
-  #end-alert {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
-  #end-desc {
-    font-size: 50px;
-    margin-bottom: 25px;
-  }*/
 
   #again:hover , #start:hover{
     cursor: pointer;
