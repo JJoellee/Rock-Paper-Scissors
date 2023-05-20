@@ -1,2 +1,2 @@
 # Rock-Paper-Scissors
-Rock-Paper-Scissors web game using HTML, CSS, and JavaScript.
+Play now [here](https://jjoellee.github.io/Rock-Paper-Scissors/)!
